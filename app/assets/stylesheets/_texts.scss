@@ -1,0 +1,127 @@
+// app/assets/stylesheets/_texts.scss
+
+// Единые переменные
+$font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$text-shadow: 1pt 1pt 1pt rgba(0, 0, 0, 0.3);
+$hover-bg: rgba($color: #808080, $alpha: 0.5);
+$hover-bg-footer: rgba($color: #808080, $alpha: 1.0);
+$transition: background-color 0.3s ease, transform 0.2s ease;
+
+// Миксин для всех текстовых элементов
+@mixin text-style(
+  $font-size,
+  $color: black,
+  $shadow: $text-shadow,
+  $white-space: pre-line
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-style: normal;
+  text-shadow: $shadow;
+  color: $color;
+  white-space: $white-space;
+
+  // Центрирование
+  &.text-center {
+    text-align: center;
+  }
+
+  // Эффект при наведении
+  &.hover-text {
+    display: inline-block;
+    padding: 5px 10px;
+    transition: $transition;
+
+    &:hover {
+      background-color: $hover-bg;
+      transform: translateY(-1pt);
+    }
+  }
+}
+
+// Применение стилей
+
+h1 { @include text-style(32pt); }
+h2 { @include text-style(30pt); }
+h3 { @include text-style(28pt); }
+h4 { @include text-style(26pt); }
+h5 { @include text-style(24pt); }
+h6 { @include text-style(22pt); }
+
+p {
+  @include text-style(14pt);
+
+  // Особый hover для p (был display: flex)
+  &.hover-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &:hover {
+      background-color: $hover-bg;
+      transform: translateY(-1pt);
+    }
+  }
+}
+
+a {
+  @include text-style(14pt);
+
+  // Дополнительно: подчёркивание при hover (опционально)
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.hover-text {
+    &:hover {
+      background-color: $hover-bg;
+      transform: translateY(-1pt);
+    }
+  }
+}
+
+footer {
+  @include text-style(10pt, black, 0.8pt 0.8pt 1pt rgba(0, 0, 0, 0.3));
+
+  &.hover-text {
+    display: inline-block;
+    padding: 5px 10px;
+    transition: $transition;
+
+    &:hover {
+      background-color: $hover-bg-footer;
+      transform: scale(1.02);
+    }
+  }
+}
+
+// 🌙 Темный режим — инверсия цветов
+.dark {
+  h1, h2, h3, h4, h5, h6, p, a, footer {
+    color: #f0f0f0;
+    text-shadow: 1pt 1pt 2pt rgba(255, 255, 255, 0.4);
+
+    &.hover-text:hover {
+      background-color: rgba($color: #aaa, $alpha: 0.4);
+    }
+  }
+
+  footer {
+    color: #ddd;
+    text-shadow: 0.8pt 0.8pt 1.5pt rgba(255, 255, 255, 0.5);
+  }
+}
+
+// ✨ Дополнительно: эффект "парения" для важных заголовков
+.floating {
+  animation: float 3s ease-in-out infinite;
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5pt); }
+    100% { transform: translateY(0); }
+  }
+}

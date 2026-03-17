@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Fast Message" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <!-- <link rel="icon" href="/icon.png" type="image/png"> -->
+    <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+    <nav class="navbar">
+      <div class="nav-left">
+        <%= link_to "Fast Message", root_path, class: "nav-brand" %>
+        <%= link_to "О нас", about_path, class: "nav-link" %>
+        <%= link_to "Связаться с нами", contact_path, class: "nav-link" %>
+
+        <!-- Ссылки на комнаты -->
+        <%= link_to "Чаты", rooms_path, class: "nav-link" %>
+
+        <% if user_signed_in? %>
+          <%= link_to "Новый чат", new_room_path, class: "nav-link btn-create-room" %>
+        <% end %>
+      </div>
+
+      <div class="nav-right">
+        <% if user_signed_in? %>
+          <!-- Профиль пользователя -->
+          <div class="nav-profile">
+            <%= link_to edit_user_registration_path, class: "nav-avatar" do %>
+              <span class="avatar-icon">👤</span>
+              <span class="username"><%= current_user.username || current_user.email.split('@').first %></span>
+            <% end %>
+
+            <%= button_to "Выйти", destroy_user_session_path, method: :delete, class: "nav-signout" %>
+          </div>
+        <% else %>
+          <!-- Гостевые кнопки -->
+          <%= link_to "Войти", new_user_session_path, class: "nav-signin" %>
+          <%= link_to "Регистрация", new_user_registration_path, class: "nav-signup" %>
+        <% end %>
+      </div>
+    </nav>
+
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+// app/assets/stylesheets/rooms.scss
+
+@import "variables";
+
+.rooms-new {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+
+  h1 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+
+  form {
+    .field,
+    .actions {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: #007bff;
+          box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+        }
+
+        &::placeholder {
+          color: #aaa;
+        }
+      }
+    }
+
+    .actions {
+      text-align: center;
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+
+  .error-message {
+    color: #d32f2f;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+
+    &:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+  }
+}

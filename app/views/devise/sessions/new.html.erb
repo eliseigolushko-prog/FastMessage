@@ -1,0 +1,28 @@
+<div class="devise-form">
+  <h2 class="text-center">Войти</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <p><%= f.label :username %></p>
+      <p><%= f.text_field :username, autofocus: true, autocomplete: "username" %></p>
+    </div>
+
+    <div class="field">
+      <p><%= f.label :password %></p>
+      <p><%= f.password_field :password, autocomplete: "current-password" %></p>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field checkbox">
+        <p><%= f.check_box :remember_me %></p>
+        <p><%= f.label :remember_me %></p>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Войти" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>

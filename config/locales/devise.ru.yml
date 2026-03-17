@@ -1,0 +1,7 @@
+ru:
+  activerecord:
+    attributes:
+      user:
+        username: "Никнейм"
+        first_name: "Имя"
+        last_name: "Фамилия"

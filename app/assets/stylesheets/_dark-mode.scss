@@ -1,0 +1,26 @@
+// app/assets/stylesheets/_dark-mode.scss
+
+@import "variables";
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+
+  h1, h2, h3, h4, h5, h6, p, a, footer, .card {
+    color: #f0f0f0;
+    text-shadow: 1pt 1pt 2pt rgba(255, 255, 255, 0.3);
+  }
+
+  .card {
+    background: #2d2d2d;
+  }
+
+  .btn {
+    &--primary { background-color: lighten($color-primary, 10%); }
+    &--accent { background-color: lighten($color-accent, 10%); }
+  }
+
+  .footer {
+    border-top-color: #555;
+  }
+}

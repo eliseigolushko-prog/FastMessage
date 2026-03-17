@@ -1,0 +1,35 @@
+// app/assets/stylesheets/_pages.scss
+
+@import "variables";
+
+.page-home {
+  h1 {
+    font-size: $font-size-h1;
+    color: $color-primary;
+    text-shadow: $text-shadow;
+  }
+
+  .btn {
+    margin: 10pt 5pt;
+    font-size: $font-size-body;
+  }
+}
+
+.page-about,
+.page-contact {
+  h1 {
+    font-size: $font-size-h2;
+    color: $color-primary;
+    text-shadow: $text-shadow;
+  }
+
+  p {
+    font-size: $font-size-body;
+    margin-bottom: 15pt;
+  }
+
+  a {
+    color: $color-primary;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,54 @@
+<!-- app/views/home/contact.html.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" lang="ru">
+    <title>FastMessage – Contact</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+  <body class="<%= session[:dark_mode] ? 'dark' : '' %>">
+    <!-- Navbar -->
+
+    <!-- Основное содержимое -->
+    <div class="container">
+      <h1 class="text-center hover-text">Свяжитесь с нами</h1>
+      <p class="hover-text">
+        Готовы помочь вам в любых вопросах.
+      </p>
+
+      <div class="card">
+        <div class="feature__icon" style="font-size: 40pt; text-align: center;">📞</div>
+        <p class="text-center" style="font-size: 16pt;"><strong>Телефон:</strong> +7 (986) 984-80-35</p>
+      </div>
+
+      <div class="card" style="margin-top: 20pt;">
+        <div class="feature__icon" style="font-size: 40pt; text-align: center;">📧</div>
+        <p class="text-center" style="font-size: 16pt;"><strong>Email:</strong> elisei.golushko@gmail.com</p>
+      </div>
+
+      <!-- Почему стоит писать нам? -->
+      <section style="margin-top: 40pt;">
+        <h2 class="text-center hover-text">Почему стоит писать нам?</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature__icon">⏱️</div>
+            <div class="feature__title">Быстрый ответ</div>
+            <div class="feature__desc">Отвечаем в течение 24 часов — обычно быстрее.</div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">🗣️</div>
+            <div class="feature__title">Поддержка на русском</div>
+            <div class="feature__desc">Наши специалисты говорят на вашем языке.</div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">💡</div>
+            <div class="feature__title">Помогаем с идеями</div>
+            <div class="feature__desc">Если вы хотите улучшить сервис — расскажите нам!</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="hover-text">© Елисей Голушко Ruby on Rails 2026</footer>
+  </body>
+</html>

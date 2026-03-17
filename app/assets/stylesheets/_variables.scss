@@ -1,0 +1,33 @@
+// app/assets/stylesheets/_variables.scss
+
+// Цвета
+$color-primary: #4a6fa5;
+$color-accent: #03dac6;
+$color-danger: #ff5252;
+$color-success: #4caf50;
+$color-warning: #ff9800;
+$color-gray: #e2e8f0;
+$color-dark: #2d3748;
+$color-light: #f5f7fb;
+$color-hover: #808080;
+
+$color-gray-dark: #718096;
+
+// Размеры (в pt, как в текущем стиле)
+$font-size-h1: 32pt;
+$font-size-h2: 30pt;
+$font-size-h3: 28pt;
+$font-size-h4: 26pt;
+$font-size-h5: 24pt;
+$font-size-h6: 22pt;
+$font-size-body: 14pt;
+$font-size-footer: 10pt;
+
+// Тень (единая для всех элементов)
+$text-shadow: 1pt 1pt 1pt rgba(0, 0, 0, 0.3);
+
+// Переходы
+$transition: background-color 0.3s ease;
+
+// Шрифт
+$font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

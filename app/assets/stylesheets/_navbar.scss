@@ -1,0 +1,122 @@
+// app/assets/stylesheets/navbar.scss
+
+@import "variables";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Ubuntu, sans-serif;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-brand,
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1em;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #007bff;
+  }
+}
+
+.nav-brand {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+// Правая часть — профиль или вход
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-avatar {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.avatar-icon {
+  font-size: 1.4em;
+  margin-right: 6px;
+}
+
+.username {
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+.nav-signout {
+  background: none;
+  border: none;
+  color: #d9534f;
+  font-size: 0.9em;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: #c82333;
+  }
+}
+
+.nav-signin,
+.nav-signup {
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.nav-signin {
+  color: #007bff;
+  border: 1px solid #007bff;
+
+  &:hover {
+    background-color: #007bff;
+    color: white;
+  }
+}
+
+.nav-signup {
+  background-color: #28a745;
+  color: white;
+  border: 1px solid #28a745;
+
+  &:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+}
+
+.btn-create-room {
+  background-color: #007bff;
+  color: white !important;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #0056b3;
+    color: white !important;
+  }
+}

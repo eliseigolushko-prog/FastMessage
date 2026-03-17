@@ -1,0 +1,113 @@
+// app/assets/stylesheets/_checkboxes.scss
+
+@import "variables";
+@import "texts";
+
+// Скрыть оригинальный чекбокс
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18pt;
+  height: 18pt;
+  border: 1.5pt solid $color-primary;
+  border-radius: 3pt;
+  background: white;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+
+  // Визуальный центр при наведении
+  &:hover {
+    border-color: darken($color-primary, 10%);
+    box-shadow: 0 0 0 2pt rgba($color-primary, 0.2);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3pt rgba($color-primary, 0.3);
+  }
+
+  // Галочка (через ::after)
+  &::after {
+    content: '';
+    position: absolute;
+    top: 3pt;
+    left: 6pt;
+    width: 6pt;
+    height: 9pt;
+    border: 2pt solid white;
+    border-width: 0 2pt 2pt 0;
+    transform: rotate(45deg) scale(0);
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  // Активное состояние — галочка появляется
+  &:checked {
+    background: $color-primary;
+    border-color: darken($color-primary, 10%);
+
+    &::after {
+      transform: rotate(45deg) scale(1);
+      opacity: 1;
+    }
+  }
+
+  // Отключённое состояние
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    border-color: $color-gray;
+  }
+
+  // 🌙 Темный режим
+  .dark & {
+    background: #1a1a1a;
+    border-color: lighten($color-primary, 15%);
+
+    &:hover:not(:checked) {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 2pt rgba($color-primary, 0.3);
+    }
+
+    &:checked {
+      background: lighten($color-primary, 10%);
+      border-color: $color-primary;
+    }
+  }
+}
+
+// Обёртка label + checkbox — для лучшего отображения
+.field,
+.form-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10pt;
+  margin-bottom: 12pt;
+
+  // Если label рядом с checkbox
+  > label {
+    font-size: 13pt;
+    color: black;
+    text-shadow: $text-shadow;
+    cursor: pointer;
+    line-height: 1.5;
+
+    .dark & {
+      color: #f0f0f0;
+      text-shadow: 1pt 1pt 2pt rgba(255, 255, 255, 0.4);
+    }
+
+    &.hover-text:hover {
+      background-color: $hover-bg;
+      transform: translateY(-1pt);
+    }
+  }
+}
+
+// Для случаев, когда чекбокс внутри <p> (как в Devise)
+p > input[type="checkbox"] {
+  margin-right: 6pt;
+  vertical-align: top;
+}

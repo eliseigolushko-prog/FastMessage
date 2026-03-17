@@ -1,0 +1,21 @@
+<div class="chat-container">
+  <div class="chat-header">
+    <h1><%= @room.name %></h1>
+  </div>
+
+  <!-- Подписка на Turbo Streams -->
+  <%= turbo_stream_from "room_#{@room.id}_messages" %>
+
+  <%= turbo_stream_from "room_#{@room.id}_user_#{current_user.id}" %>
+
+  <!-- Сообщения -->
+  <div id="messages">
+    <%# Выводим сообщения, где я — отправитель, получатель или где получателя нет %>
+    <%= render @room.messages.where("recipient_id IS NULL OR recipient_id = ? OR user_id = ?", current_user.id, current_user.id) %>
+  </div>
+
+  <!-- Форма ввода -->
+  <div class="message-form-container">
+    <%= render "messages/form", room: @room, message: Message.new %>
+  </div>
+</div>

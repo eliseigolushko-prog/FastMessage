@@ -1,0 +1,15 @@
+// app/assets/stylesheets/_mixins.scss
+
+@mixin hover-effect {
+  display: inline-block;
+  padding: 5px 10px;
+  transition: $transition;
+
+  &:hover {
+    background-color: rgba($color: $color-hover, $alpha: 0.5);
+  }
+}
+
+@mixin center {
+  text-align: center;
+}

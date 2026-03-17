@@ -1,0 +1,8 @@
+<div id="<%= dom_id message %>" class="<%= 'private-msg' if message.recipient_id.present? %>">
+  <strong><%= message.user.username %>:</strong>
+  <% if message.recipient.present? %>
+    <span>[ЛИЧНО для <%= message.recipient.username %>]</span>
+  <% end %>
+  <%= message.content %>
+  <small>(<%= message.created_at.strftime("%H:%M") %>)</small>
+</div>

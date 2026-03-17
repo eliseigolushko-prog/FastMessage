@@ -1,0 +1,19 @@
+<%# app/views/messages/_form.html.erb %>
+<%= form_with(model: [room, message], url: room_messages_path(room.name), id: "new_message", local: false) do |f| %>
+  <div class="message-form-select-wrapper">
+    <%= f.label :recipient_id, "Кому (необязательно):" %>
+    <%= f.collection_select :recipient_id,
+        User.where.not(id: current_user.id),
+        :id,
+        :username,
+        { include_blank: "Всем" },
+        { class: "message-select-field" } %>
+  </div>
+
+  <%= f.text_field :content,
+      placeholder: "Введите сообщение...",
+      autocomplete: "off",
+      class: "message-input-field" %>
+
+  <%= f.submit "Отправить", class: "message-submit-button" %>
+<% end %>

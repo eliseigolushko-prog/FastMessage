@@ -1,0 +1,48 @@
+<!-- app/views/home/index.html.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" lang="ru">
+    <title>FastMessage – Home</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+  <body class="<%= session[:dark_mode] ? 'dark' : '' %>">
+    <!-- Navbar -->
+
+    <!-- Основное содержимое -->
+    <div class="container">
+      <h1 class="text-center floating hover-text">Добро пожаловать в FastMessage!</h1>
+      <p class="text-center hover-text" style="font-size: 16pt;">
+        Быстро. Надёжно. Безопасно.
+      </p>
+
+      <div class="text-center" style="margin: 30pt 0;">
+        <%= link_to "Начать общение", rooms_path, class: "btn btn--accent btn-pulse hover-text" %>
+      </div>
+
+      <!-- Почему мы? -->
+      <section>
+        <h2 class="text-center hover-text">Почему выбирают нас?</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature__icon">⚡</div>
+            <div class="feature__title">Мгновенные сообщения</div>
+            <div class="feature__desc">Обменяйтесь сообщением за доли секунды — без задержек и лагов.</div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">🔒</div>
+            <div class="feature__title">Конфиденциальность</div>
+            <div class="feature__desc">Все данные шифруются с端-to-end. Мы не читаем ваши переписки.</div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">📱</div>
+            <div class="feature__title">Работает везде</div>
+            <div class="feature__desc">Доступно на всех устройствах: телефон, планшет, компьютер.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="hover-text">© Елисей Голушко Ruby on Rails 2026</footer>
+  </body>
+</html>

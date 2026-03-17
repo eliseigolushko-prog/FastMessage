@@ -1,0 +1,94 @@
+// app/assets/stylesheets/_components.scss
+
+@import "variables";
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4pt 8pt rgba(0, 0, 0, 0.1);
+  padding: 20pt;
+  margin-bottom: 20pt;
+
+  &__title {
+    font-size: $font-size-h3;
+    color: $color-primary;
+    margin-bottom: 10pt;
+    text-shadow: $text-shadow;
+  }
+
+  &__content {
+    font-size: $font-size-body;
+    color: black;
+    line-height: 1.6;
+  }
+}
+
+.avatar {
+  width: 50pt;
+  height: 50pt;
+  border-radius: 50%;
+  background: $color-primary;
+  color: white;
+  font-family: $font-family;
+  font-size: $font-size-h5;
+  font-weight: bold;
+  text-shadow: $text-shadow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10pt;
+}
+
+.badge {
+  font-family: $font-family;
+  font-size: 10pt;
+  padding: 4pt 8pt;
+  border-radius: 10pt;
+  background: $color-accent;
+  color: white;
+  text-shadow: $text-shadow;
+  display: inline-block;
+}
+
+// app/assets/stylesheets/_components.scss
+
+.feature {
+  margin: 20pt 0;
+  padding: 15pt;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4pt 8pt rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5pt);
+    box-shadow: 0 8pt 16pt rgba(0, 0, 0, 0.15);
+  }
+
+  &__icon {
+    font-size: 32pt;
+    margin-bottom: 10pt;
+    color: $color-primary;
+  }
+
+  &__title {
+    font-size: 20pt;
+    color: $color-primary;
+    text-shadow: $text-shadow;
+    margin-bottom: 10pt;
+  }
+
+  &__desc {
+    font-size: 14pt;
+    line-height: 1.6;
+    color: black;
+  }
+}
+
+// Сетка для фич
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250pt, 1fr));
+  gap: 20pt;
+  margin: 30pt 0;
+}

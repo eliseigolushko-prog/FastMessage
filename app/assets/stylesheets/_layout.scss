@@ -1,0 +1,45 @@
+// app/assets/stylesheets/_layout.scss
+
+@import "variables";
+
+.container {
+  max-width: 1000pt;
+  margin: 0 auto;
+  padding: 20pt;
+}
+
+.header {
+  padding: 15pt 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20pt;
+
+  &__logo {
+    font-size: $font-size-h2;
+    font-weight: bold;
+    color: $color-primary;
+    text-shadow: $text-shadow;
+  }
+}
+
+.footer {
+  margin-top: 40pt;
+  padding: 15pt 0;
+  border-top: 1px solid #ccc;
+  font-size: $font-size-footer;
+  text-shadow: 0.8pt 0.8pt 0.8pt rgba(0, 0, 0, 0.3);
+  color: black;
+
+  &.text-center {
+    text-align: center;
+  }
+
+  &.hover-text {
+    display: inline-block;
+    padding: 5px 10px;
+    transition: $transition;
+
+    &:hover {
+      background-color: rgba($color: #808080, $alpha: 1.0);
+    }
+  }
+}

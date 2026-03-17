@@ -1,0 +1,48 @@
+<!-- app/views/home/about.html.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" lang="ru">
+    <title>FastMessage – About</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+  <body class="<%= session[:dark_mode] ? 'dark' : '' %>">
+    <!-- Navbar -->
+
+    <!-- Основное содержимое -->
+    <div class="container">
+      <h1 class="text-center hover-text">О нас</h1>
+      <p class="hover-text">
+        FastMessage — это современный мессенджер, созданный с заботой о скорости, безопасности и удобстве.
+      </p>
+      <p class="hover-text">
+        Мы верим, что общение должно быть простым, быстрым и защищённым. Именно поэтому разработали платформу,
+        которая работает без сбоев и не требует сложных настроек.
+      </p>
+
+      <!-- Наши принципы -->
+      <section>
+        <h2 class="text-center hover-text">Наши принципы</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature__icon">❤️</div>
+            <div class="feature__title">Забота о пользователях</div>
+            <div class="feature__desc">Мы слушаем обратную связь и постоянно улучшаем сервис.</div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">🚀</div>
+            <div class="feature__title">Высокая производительность</div>
+            <div class="feature__desc">Сервера расположены по всему миру — задержки минимальны.</div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">🔧</div>
+            <div class="feature__title">Без лишнего</div>
+            <div class="feature__desc">Только необходимые функции — без спама и рекламы.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="hover-text">© Елисей Голушко Ruby on Rails 2026</footer>
+  </body>
+</html>

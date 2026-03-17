@@ -1,0 +1,13 @@
+<div class="rooms-index">
+  <h1>Все чат-комнаты</h1>
+
+  <ul class="rooms-list">
+    <% @rooms.each do |room| %>
+      <li class="room-item">
+        <%= link_to room.name, room_path(room.name) %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Создать новую комнату", new_room_path, class: "btn-create" %>
+</div>
