@@ -8,5 +8,3 @@ class HomeController < ApplicationController
   def contact
   end
 end
-
-#123abc123 & creatorchessbots@gmail.com
